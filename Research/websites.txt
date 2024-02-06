@@ -18,3 +18,10 @@ https://www.geeksforgeeks.org/underfitting-and-overfitting-in-machine-learning/
 https://www.geeksforgeeks.org/decision-tree/
 
 
+Stats Canada:
+
+https://www.statcan.gc.ca/en/subjects-start/housing
+
+https://www150.statcan.gc.ca/n1/daily-quotidien/220921/dq220921b-cansim-eng.htm
+
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
