@@ -13,6 +13,10 @@ Import libraries to work with
 import matplotlib.pyplot as plt
 import pandas as pd
 
+# Specific Imports
+from matplotlib.ticker import FixedLocator
+from matplotlib.ticker import FixedFormatter
+
 """Import the data"""
 
 # Initialize dataset from file
@@ -29,12 +33,6 @@ print(dataset_modded.shape)
 
 """Break the data up into usable sets"""
 
-# Setup the x axis to be the months of the years
-x_axis = dataset_modded.columns.values
-
-# Sample the x set to verify
-print(x_axis[0:4])
-
 # Setup the House cost variable
 house_cost = dataset_modded.iloc[0]
 
@@ -46,39 +44,62 @@ cpi = dataset_modded.iloc[2]
 
 # Check the new variables
 print(
-    f"House Cost: \n{h_cost[0:4]}\n"
-    f"Interest Rate: \n{i_rate[0:4]}\n"
+    f"House Cost: \n{house_cost[0:4]}\n"
+    f"Interest Rate: \n{interst_rate[0:4]}\n"
     f"CPI: \n{cpi[0:4]}\n"
     )
 
 """Append variables to dictionary for iterability"""
 
-# Initialize new empty dictionary
-data_dict = {}
+# Initialize new list for variable data
+data_vars = [house_cost, interst_rate, cpi]
 
 # Setup a list of the titles of the data sets
 titles = ['House Cost', 'Interest Rate', 'CPI']
+info = ['201612=100', 'Percent', '2002=100']
 
-# Couple the titles with the sets as key-value pairs
-data_dict[titles[0]] = house_cost
-data_dict[titles[1]] = interst_rate
-data_dict[titles[2]] = cpi
+# Couple the titles and info with the data sets
+data_list = list(zip(
+    titles,
+    info,
+    [data_vars[item] for item in range(len(titles))]
+    ))
+
+# Verify the coupling worked
+print(data_list)
 
 """Start plotting some Graphs to identify trends"""
 
 # Start a for loop to make graphs for all the sets in the dictonary
-for title, data in data_dict.items():
+for title, info, data in data_list:
   # Make a new Figure
   fig = plt.figure()
 
   # Add a plot to the figure
   plot = fig.add_subplot(1, 1, 1)
 
+  # plot the data to the graph
+  data_ticks = data.index.tolist()
+  plot.plot(data_ticks, data)
+
   # Add Dynamic Labels and Legend
-  plot.set_title(f'{title}')
+  plot.set_title(f'{title} from 2008 to 2023')
+  plot.legend([f'{info}'])
 
   # X Labels and ticks
-  plot.set_xticklabels(data, rotation=45)
+  # Space out the X ticks for readability
+  spaced_ticks = [
+      data_ticks[0],
+      data_ticks[31],
+      data_ticks[63],
+      data_ticks[95],
+      data_ticks[127],
+      data_ticks[159],
+      data_ticks[191]
+      ]
+
+  plot.set_xticks(spaced_ticks)
+  plot.set_xticklabels(spaced_ticks, rotation=45)
   plot.set_xlabel('Months/Years')
 
   # y Labels
