@@ -101,5 +101,12 @@ print(f"mean Squared Error: {mse}")
 plt.scatter(y_test, y_predict)
 plt.xlabel('Actual Prices')
 plt.ylabel('Predicted Prices')
-plt.title('Actual Prices vs Predicted Prices')
+plt.title('First Learning Graph')
+
+# Adjust layout for better appearance
+plt.tight_layout()
+
+# Save the plot to a dynamic SVG file
+plt.savefig('firstGraph.svg', format='svg', bbox_inches='tight')
+
 plt.show()
