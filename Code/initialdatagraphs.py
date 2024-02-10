@@ -25,22 +25,19 @@ dataset = pd.read_csv('combinedData.csv')
 # Verify the import worked
 print(dataset.head())
 
-# Remove the first column
-dataset_modded = dataset[dataset.columns[1:]]
-
 # Verify the update
-print(dataset_modded.shape)
+print(dataset.shape)
 
 """Break the data up into usable sets"""
 
 # Setup the House cost variable
-house_cost = dataset_modded.iloc[0]
+house_cost = dataset.iloc[0]
 
 # Setup the Interest Rate variable
-interst_rate = dataset_modded.iloc[1]
+interst_rate = dataset.iloc[1]
 
 # Setup Canada Price Index for shelter variable
-cpi = dataset_modded.iloc[2]
+cpi = dataset.iloc[2]
 
 # Check the new variables
 print(
