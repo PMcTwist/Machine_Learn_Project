@@ -25,3 +25,11 @@ https://www.statcan.gc.ca/en/subjects-start/housing
 https://www150.statcan.gc.ca/n1/daily-quotidien/220921/dq220921b-cansim-eng.htm
 
 https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
+
+
+MLS:
+https://www.crea.ca/housing-market-stats/canadian-housing-market-stats/national-price-map/
+
+
+Misc:
+https://www.kdnuggets.com/2022/10/hyperparameter-tuning-grid-search-random-search-python.html
