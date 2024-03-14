@@ -222,7 +222,6 @@ future_data['Composite_Benchmark_Predicted'] = future_predictions
 """Plot the Predicted actual prices"""
 
 # Plot the predicted Composite Benchmark prices over time
-# plt.figure(figsize=(10, 6))
 plt.plot(future_data['Date'], future_data['Composite_Benchmark_Predicted'], label='Predicted Prices')
 
 # Set up the axis
