@@ -13,7 +13,7 @@ A Repo for the main project for the machine learning course @UWindsor
 
 <b>Outcome</b>
 <p>
-  The outcome from this project shows a pattern of high markets in the spring and lowest markets in the early winter months.
+  The outcome from this project shows a pattern of high markets in the spring and lowest markets in the early winter months. Unfortunatly, the scale of the prices are not in the right range. We would need to further develop our models to predict for missing feature data so that our initial model could predict the proper scale of prices. And if we did that, realistically there would be no need for initial model because we would have one predicting the future already.
 </p>
 
 ![PredictionGraph](https://github.com/PMcTwist/Machine_Learn_Project/assets/36010758/6141c07f-4ab3-41a1-83d2-74305d7efca3)<?xml version="1.0" encoding="utf-8" standalone="no"?>
